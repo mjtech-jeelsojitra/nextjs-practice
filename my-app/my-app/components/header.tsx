@@ -9,7 +9,7 @@ const header = () => {
     return (
         <nav className='relative flex items-center w-full py-4'>
             <img src={Images.logo} alt="Logo" className='w-14 h-14 ' />
-            <ul className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex flex-row gap-8 list-none cursor-pointer'>
+            <ul     className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex flex-row gap-8 list-none cursor-pointer'>
                 {Contstant.navArray.map((item) => {
                     const { content } = item
                     return (
