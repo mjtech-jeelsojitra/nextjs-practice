@@ -3,6 +3,7 @@ import { Schibsted_Grotesk, Martian_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import LightRays from '@/components/LightRays';
+import { PostHogProvider } from './providers';
 
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -32,7 +33,7 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", SchibstedSans.variable, MartianMono.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full flex flex-col">
+      <body className=" h-screen flex flex-col">
         <div className="absolute  inset-0 -z-10 ">
           <LightRays
             raysOrigin="top-center"
@@ -47,10 +48,10 @@ export default function RootLayout({
             className="custom-rays"
             pulsating={false}
             fadeDistance={1}
-            saturation={1}
+            saturation={0}
           />
         </div>
-        {children}</body>
+        <PostHogProvider>{children}</PostHogProvider></body>
     </html>
   );
 }

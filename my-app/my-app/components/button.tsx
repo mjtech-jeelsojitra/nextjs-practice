@@ -1,8 +1,21 @@
 'use client';
 
-const button = () => {
+interface ButtonProps {
+    onClick?: () => void;
+    text: string;
+    className?: string;
+}
+
+const button = (PROPS: ButtonProps) => {
+    const { onClick, text, className } = PROPS
     return (
-        <button type="button" className="bg-black mt-2  rounded-lg text-sm p-2 text-white cursor-pointer" onClick={() => console.log(114514)} >Explore</button>
+        <button
+            type="button"
+            className={`bg-cyan-600 shadow-md shadow-cyan-950 mt-2 rounded-lg text-sm p-2 text-white cursor-pointer ${className}`}
+            onClick={onClick}
+        >
+            {text}
+        </button>
     )
 }
 
